@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: black;
+    color: white;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.screen {
+    width: 70%;
+    cursor: pointer;
+    background-color: black !important;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.controls {
+    background-color: black;
+    color: white;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.controls input {
+    flex: auto
+}
+
+.controls .btn {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.controls .fa-play {
+    color: #28a745;
+}
+
+.controls .fa-stop {
+    color: #dc3545;
+}
+
+.controls .timestamp {
+    color: #fff;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.screen:focus {
+    outline: none;
+}
+
+@media (max-width: 570px) {
+    .screen, .controls {
+        width: 96%;
+    }
+}
