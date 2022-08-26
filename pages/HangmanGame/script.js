@@ -19,22 +19,25 @@ const wrongLetters = [];
 
 // Show hidden word
 function displayWord() {
+    let won = true;
     wordEl.innerHTML = `
     ${selectedWord
             .split('')
             .map(
-                letter => `
+                letter => {
+                    if (!correctLetters.includes(letter)) {
+                        won = false;
+                    }
+                    return `
           <span class="letter">
             ${correctLetters.includes(letter) ? letter : ''}
           </span>
-        `
+        `}
             )
             .join('')}
   `;
 
-    const innerWord = wordEl.innerText.replace(/[ \n]/g, '');
-
-    if (innerWord === selectedWord) {
+    if (won) {
         finalMessage.innerText = 'Congratulations! You won! 😃';
         finalMessageRevealWord.innerText = '';
         popup.style.display = 'flex';
@@ -125,4 +128,4 @@ playAgainBtn.addEventListener('click', () => {
     popup.style.display = 'none';
 });
 
-displayWord();
+displayWord(); 
