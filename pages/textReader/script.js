@@ -110,8 +110,6 @@ function speakText() {
   speechSynthesis.speak(message);
 }
 function setVoice(e) {
-  console.log(e.target);
-  console.log(e.target.value);
   message.voice = voices.find(voice => voice.name == e.target.value);
 }
 

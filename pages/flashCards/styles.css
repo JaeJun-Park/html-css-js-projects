@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  position: relative;
+}
+
+h1 button {
+  position: absolute;
+  right: 0;
+  transform: translate(120%, -50%);
+  z-index: 2;
+}
+
+.btn {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin-top: 20px;
+}
+
+.btn-small {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.btn-ghost {
+  border: 0;
+  background-color: transparent;
+  color: #fff;
+}
+
+.clear {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+.btn:active {
+  transform: scale(.98);
+}
+
+.cards {
+  perspective: 1000px;
+  position: relative;
+  height: 300px;
+  width: 500px;
+  max-width: 100%;
+}
+
+.card {
+  position: absolute;
+  opacity: 0;
+  font-size: 1.5em;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: translatex(50%) rotateY(-10deg);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.card.active {
+  opacity: 1;
+  cursor: pointer;
+  z-index: 10;
+  transform: translatex(0%) rotateY(0deg);
+}
+
+.card.left {
+  transform: translate(-50%) rotateY(10deg);
+}
+
+.card.show-answer .inner-card {
+  transform: rotatex(180deg);
+}
+
+.inner-card {
+  box-shadow: 0 1px 7px rgba(199, 199, 199, 0.3);
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .4s ease;
+}
+
+.inner-card-front, .inner-card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.inner-card-front {
+  transform: rotatex(0deg);
+  z-index: 2;
+}
+
+.inner-card-back {
+  transform: rotatex(180de);
+}
+
+.inner-card-front::after, .inner-card-back::after {
+  content: '\f021 Flip';
+  font-family: 'Font Awesome 5 Free', 'Lato', sans-serif;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #ddd;
+}
