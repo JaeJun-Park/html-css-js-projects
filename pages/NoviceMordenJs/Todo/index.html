@@ -46,7 +46,7 @@
             position: relative;
         }
 
-        .todo-close-btn {
+        .delete {
             position: absolute;
             top: 5px;
             right: 5px;
@@ -74,7 +74,6 @@
         function addTodoToDOM(todo) {
             const li = document.createElement('li');
             const div = document.createElement('div');
-            div.classList.add('delete');
             div.innerHTML = `<i class="fas fa-trash delete"></i>`;
             /* remove todo from list*/
             li.innerText = `${todo}`;

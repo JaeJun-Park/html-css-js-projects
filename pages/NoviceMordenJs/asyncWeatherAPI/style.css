@@ -1,0 +1,32 @@
+body {
+  background-color: black;
+  letter-spacing: 0.2em;
+  font-size: 0.8em;
+  color: #fff;
+}
+
+input {
+  background: transparent;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+}
+
+.card {
+  display: none;
+
+}
+
+.show {
+  display: block;
+}
+
+.icon {
+  position: relative;
+  top: -50px;
+  border-radius: 50%;
+  width: 100px;
+  margin-bottom: -50px;
+}
