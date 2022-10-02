@@ -13,7 +13,7 @@ class Forecast {
             cityDets, weather
         };
     }
-
+// ~/Library/Application Support/discord/settings.json
     async getCity(city) {
         const base = this.cityURI;
         const query = `?apikey=${this.apikey}&q=${city}`;
